@@ -1,15 +1,14 @@
-# Step 1: Use official Python image as base
-FROM python:3.9-slim
+# Use Python base image
+FROM python:3.9
 
-# Step 2: Set working directory inside the container
+# Set working directory inside container
 WORKDIR /app
 
-# Step 3: Copy all project files into the container
-COPY . .
+# Copy only the required files
+COPY app.py .
+COPY README.md .
 
-# Step 4: No dependencies for now 
-# No dependencies for now
+# Define default command
+CMD ["python3", "app.py"]
 
-# Step 5 : Run python app
-CMD ["python", "app.py"]
 
